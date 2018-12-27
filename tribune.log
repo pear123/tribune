@@ -4970,3 +4970,355 @@ Verify the connector's configuration, identify and stop any process that's liste
 2018-12-27 17:40:20.012 DEBUG 4624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
 2018-12-27 17:40:20.013 DEBUG 4624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18397926325(String)
 2018-12-27 17:40:20.016 DEBUG 4624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 1
+2018-12-27 17:42:37.603  INFO 8128 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on nkgw10nh2005 with PID 8128 (E:\IdeaProjects\tribune\target\classes started by Lili.Chen in E:\IdeaProjects\tribune)
+2018-12-27 17:42:37.606  INFO 8128 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-12-27 17:42:37.842  INFO 8128 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-27 17:42:37.843  INFO 8128 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-27 17:42:39.955  INFO 8128 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2018-12-27 17:42:39.975  INFO 8128 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-27 17:42:39.975  INFO 8128 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-27 17:42:39.981  INFO 8128 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_162\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\maven\apache-maven-3.1.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_162\bin;D:\mysql-5.7.21-winx64\bin;D:\apache-tomcat-7.0.70\bin;D:\Git\cmd;C:\Users\lili.chen\AppData\Local\Microsoft\WindowsApps;;.]
+2018-12-27 17:42:40.101  INFO 8128 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring embedded WebApplicationContext
+2018-12-27 17:42:40.102  INFO 8128 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2259 ms
+2018-12-27 17:42:40.242  INFO 8128 --- [MLog-Init-Reporter] com.mchange.v2.log.MLog                  : MLog clients using slf4j logging.
+2018-12-27 17:42:40.282  INFO 8128 --- [restartedMain] com.mchange.v2.c3p0.C3P0Registry         : Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-12-27 17:42:41.309  INFO 8128 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-27 17:42:41.359  INFO 8128 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/demo'
+2018-12-27 17:42:41.363  INFO 8128 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 4.399 seconds (JVM running for 5.404)
+2018-12-27 17:42:46.482  INFO 8128 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-27 17:42:46.482  INFO 8128 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-27 17:42:46.496  INFO 8128 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2018-12-27 17:43:04.879 DEBUG 8128 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:43:04.918  INFO 8128 --- [http-nio-9090-exec-4] c.m.v.c.i.AbstractPoolBackedDataSource   : Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2wxpo89z1ubqydn8mlypt|5d0bcab9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 2wxpo89z1ubqydn8mlypt|5d0bcab9, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/homework2?useUnicode=true&characterEncoding=utf8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-12-27 17:43:05.043 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:43:05.073 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大雄(String)
+2018-12-27 17:43:05.099 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:43:17.854 DEBUG 8128 --- [http-nio-9090-exec-5] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:43:17.856 DEBUG 8128 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:43:17.859 DEBUG 8128 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222222(String)
+2018-12-27 17:43:17.863 DEBUG 8128 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 17:43:23.132 DEBUG 8128 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:43:23.133 DEBUG 8128 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:43:23.133 DEBUG 8128 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大雄(String)
+2018-12-27 17:43:23.134 DEBUG 8128 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:43:25.412 DEBUG 8128 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:43:25.413 DEBUG 8128 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:43:25.414 DEBUG 8128 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 17:43:25.415 DEBUG 8128 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:43:32.443 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:43:32.443 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:43:32.444 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大雄(String)
+2018-12-27 17:43:32.445 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:44:34.133 DEBUG 8128 --- [http-nio-9090-exec-2] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:44:34.133 DEBUG 8128 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:44:34.134 DEBUG 8128 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 17:44:34.135 DEBUG 8128 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:44:45.898 DEBUG 8128 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:44:45.898 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:44:45.899 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大雄(String)
+2018-12-27 17:44:45.900 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:44:51.370 DEBUG 8128 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.125
+2018-12-27 17:44:53.418 DEBUG 8128 --- [http-nio-9090-exec-7] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.1111111111111111
+2018-12-27 17:44:53.418 DEBUG 8128 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:44:53.418 DEBUG 8128 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222222(String)
+2018-12-27 17:44:53.419 DEBUG 8128 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 17:44:53.436 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.2
+2018-12-27 17:44:53.495 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.2727272727272727
+2018-12-27 17:44:53.495 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.3333333333333333
+2018-12-27 17:44:53.499 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao.addUser     : ==>  Preparing: insert into User(phone,password,name,role_id)values (?,?,?,2) 
+2018-12-27 17:44:53.500 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao.addUser     : ==> Parameters: 18322222222(String), 81dc9bdb52d04dc20036dbd8313ed055(String), 大雄(String)
+2018-12-27 17:44:53.502 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao.addUser     : <==    Updates: 1
+2018-12-27 17:44:53.574 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.3076923076923077
+2018-12-27 17:44:53.575 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:44:53.576 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222222(String)
+2018-12-27 17:44:53.582 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 1
+2018-12-27 17:44:53.585 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==>  Preparing: select score.* from score where u_id=? 
+2018-12-27 17:44:53.586 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==> Parameters: 16(Integer)
+2018-12-27 17:44:53.589 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.ScoreDao.querryScoreByUid   : <==      Total: 0
+2018-12-27 17:44:53.590 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.ScoreDao.addScore   : ==>  Preparing: insert into score(sc,u_id)values (?,?) 
+2018-12-27 17:44:53.592 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.ScoreDao.addScore   : ==> Parameters: 500(Integer), 16(Integer)
+2018-12-27 17:44:53.623 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.ScoreDao.addScore   : <==    Updates: 1
+2018-12-27 17:45:17.685 DEBUG 8128 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.2857142857142857
+2018-12-27 17:45:17.685 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:45:17.686 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222222(String)
+2018-12-27 17:45:17.690 DEBUG 8128 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 1
+2018-12-27 17:47:48.803 DEBUG 8128 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.26666666666666666
+2018-12-27 17:47:48.805 DEBUG 8128 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:47:48.807 DEBUG 8128 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大雄(String)
+2018-12-27 17:47:48.813 DEBUG 8128 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 1
+2018-12-27 17:47:52.108 DEBUG 8128 --- [http-nio-9090-exec-7] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.25
+2018-12-27 17:47:52.110 DEBUG 8128 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:47:52.111 DEBUG 8128 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 17:47:52.115 DEBUG 8128 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:47:56.357 DEBUG 8128 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.23529411764705882
+2018-12-27 17:47:56.359 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:47:56.363 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222221(String)
+2018-12-27 17:47:56.368 DEBUG 8128 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 17:47:58.585 DEBUG 8128 --- [http-nio-9090-exec-10] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.2222222222222222
+2018-12-27 17:47:58.586 DEBUG 8128 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:47:58.586 DEBUG 8128 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 17:47:58.588 DEBUG 8128 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:48:13.162 DEBUG 8128 --- [http-nio-9090-exec-2] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.21052631578947367
+2018-12-27 17:48:13.163 DEBUG 8128 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:48:13.163 DEBUG 8128 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 17:48:13.165 DEBUG 8128 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:49:21.220  INFO 13624 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on nkgw10nh2005 with PID 13624 (E:\IdeaProjects\tribune\target\classes started by Lili.Chen in E:\IdeaProjects\tribune)
+2018-12-27 17:49:21.225  INFO 13624 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-12-27 17:49:21.305  INFO 13624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-27 17:49:21.305  INFO 13624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-27 17:49:23.405  INFO 13624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2018-12-27 17:49:23.423  INFO 13624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-27 17:49:23.423  INFO 13624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-27 17:49:23.429  INFO 13624 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_162\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\maven\apache-maven-3.1.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_162\bin;D:\mysql-5.7.21-winx64\bin;D:\apache-tomcat-7.0.70\bin;D:\Git\cmd;C:\Users\lili.chen\AppData\Local\Microsoft\WindowsApps;;.]
+2018-12-27 17:49:23.502  INFO 13624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring embedded WebApplicationContext
+2018-12-27 17:49:23.503  INFO 13624 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2197 ms
+2018-12-27 17:49:23.593  INFO 13624 --- [MLog-Init-Reporter] com.mchange.v2.log.MLog                  : MLog clients using slf4j logging.
+2018-12-27 17:49:23.623  INFO 13624 --- [restartedMain] com.mchange.v2.c3p0.C3P0Registry         : Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-12-27 17:49:24.550  INFO 13624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-27 17:49:24.604  INFO 13624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/demo'
+2018-12-27 17:49:24.607  INFO 13624 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 4.123 seconds (JVM running for 5.158)
+2018-12-27 17:49:31.695  INFO 13624 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-27 17:49:31.696  INFO 13624 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-27 17:49:31.708  INFO 13624 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2018-12-27 17:49:36.650 DEBUG 13624 --- [http-nio-9090-exec-3] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:49:36.683  INFO 13624 --- [http-nio-9090-exec-3] c.m.v.c.i.AbstractPoolBackedDataSource   : Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2wxpo89z1ubzllm1kx9h0m|6b97f4b9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 2wxpo89z1ubzllm1kx9h0m|6b97f4b9, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/homework2?useUnicode=true&characterEncoding=utf8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-12-27 17:49:36.791 DEBUG 13624 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:49:36.811 DEBUG 13624 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 17:49:36.827 DEBUG 13624 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:49:42.189 DEBUG 13624 --- [http-nio-9090-exec-5] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:49:42.191 DEBUG 13624 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:49:42.192 DEBUG 13624 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222221(String)
+2018-12-27 17:49:42.193 DEBUG 13624 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 17:49:48.116 DEBUG 13624 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:49:48.116 DEBUG 13624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:49:48.116 DEBUG 13624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 17:49:48.117 DEBUG 13624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:49:59.513 DEBUG 13624 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:49:59.514 DEBUG 13624 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:49:59.515 DEBUG 13624 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 17:49:59.516 DEBUG 13624 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:51:16.097 DEBUG 13624 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:51:16.098 DEBUG 13624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:51:16.098 DEBUG 13624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 17:51:16.099 DEBUG 13624 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:57:41.785  INFO 11424 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on nkgw10nh2005 with PID 11424 (E:\IdeaProjects\tribune\target\classes started by Lili.Chen in E:\IdeaProjects\tribune)
+2018-12-27 17:57:41.790  INFO 11424 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-12-27 17:57:41.943  INFO 11424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-27 17:57:41.943  INFO 11424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-27 17:57:44.315  INFO 11424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2018-12-27 17:57:44.338  INFO 11424 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-27 17:57:44.338  INFO 11424 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-27 17:57:44.346  INFO 11424 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_162\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\maven\apache-maven-3.1.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_162\bin;D:\mysql-5.7.21-winx64\bin;D:\apache-tomcat-7.0.70\bin;D:\Git\cmd;C:\Users\lili.chen\AppData\Local\Microsoft\WindowsApps;;.]
+2018-12-27 17:57:44.441  INFO 11424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring embedded WebApplicationContext
+2018-12-27 17:57:44.441  INFO 11424 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2498 ms
+2018-12-27 17:57:44.567  INFO 11424 --- [MLog-Init-Reporter] com.mchange.v2.log.MLog                  : MLog clients using slf4j logging.
+2018-12-27 17:57:44.598  INFO 11424 --- [restartedMain] com.mchange.v2.c3p0.C3P0Registry         : Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-12-27 17:57:45.900  INFO 11424 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-27 17:57:45.979  INFO 11424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/demo'
+2018-12-27 17:57:45.985  INFO 11424 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 5.177 seconds (JVM running for 6.511)
+2018-12-27 17:57:50.279  INFO 11424 --- [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-27 17:57:50.279  INFO 11424 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-27 17:57:50.296  INFO 11424 --- [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2018-12-27 17:57:54.526 DEBUG 11424 --- [http-nio-9090-exec-3] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:57:54.573  INFO 11424 --- [http-nio-9090-exec-3] c.m.v.c.i.AbstractPoolBackedDataSource   : Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2wxpo89z1ucac5p13bhd9l|9c6418d, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 2wxpo89z1ucac5p13bhd9l|9c6418d, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/homework2?useUnicode=true&characterEncoding=utf8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-12-27 17:57:54.716 DEBUG 11424 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:57:54.742 DEBUG 11424 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 17:57:54.769 DEBUG 11424 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:57:59.079 DEBUG 11424 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:57:59.082 DEBUG 11424 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:57:59.083 DEBUG 11424 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222221(String)
+2018-12-27 17:57:59.085 DEBUG 11424 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 17:58:02.475 DEBUG 11424 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:58:02.475 DEBUG 11424 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:58:02.476 DEBUG 11424 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 17:58:02.477 DEBUG 11424 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:58:08.191 DEBUG 11424 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:58:08.191 DEBUG 11424 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:58:08.192 DEBUG 11424 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 17:58:08.193 DEBUG 11424 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:59:33.545  INFO 13660 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on nkgw10nh2005 with PID 13660 (E:\IdeaProjects\tribune\target\classes started by Lili.Chen in E:\IdeaProjects\tribune)
+2018-12-27 17:59:33.549  INFO 13660 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-12-27 17:59:33.635  INFO 13660 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-27 17:59:33.636  INFO 13660 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-27 17:59:35.950  INFO 13660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2018-12-27 17:59:35.967  INFO 13660 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-27 17:59:35.967  INFO 13660 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-27 17:59:35.974  INFO 13660 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_162\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\maven\apache-maven-3.1.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_162\bin;D:\mysql-5.7.21-winx64\bin;D:\apache-tomcat-7.0.70\bin;D:\Git\cmd;C:\Users\lili.chen\AppData\Local\Microsoft\WindowsApps;;.]
+2018-12-27 17:59:36.053  INFO 13660 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring embedded WebApplicationContext
+2018-12-27 17:59:36.054  INFO 13660 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2418 ms
+2018-12-27 17:59:36.151  INFO 13660 --- [MLog-Init-Reporter] com.mchange.v2.log.MLog                  : MLog clients using slf4j logging.
+2018-12-27 17:59:36.190  INFO 13660 --- [restartedMain] com.mchange.v2.c3p0.C3P0Registry         : Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-12-27 17:59:37.117  INFO 13660 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-27 17:59:37.172  INFO 13660 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/demo'
+2018-12-27 17:59:37.176  INFO 13660 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 4.42 seconds (JVM running for 5.389)
+2018-12-27 17:59:43.215  INFO 13660 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-27 17:59:43.215  INFO 13660 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-27 17:59:43.227  INFO 13660 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2018-12-27 17:59:48.615 DEBUG 13660 --- [http-nio-9090-exec-3] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:59:48.650  INFO 13660 --- [http-nio-9090-exec-3] c.m.v.c.i.AbstractPoolBackedDataSource   : Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2wxpo89z1uccq9j1ssijch|7500455, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 2wxpo89z1uccq9j1ssijch|7500455, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/homework2?useUnicode=true&characterEncoding=utf8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-12-27 17:59:48.762 DEBUG 13660 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:59:48.784 DEBUG 13660 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 17:59:48.802 DEBUG 13660 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 17:59:53.119 DEBUG 13660 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:59:53.121 DEBUG 13660 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 17:59:53.122 DEBUG 13660 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222221(String)
+2018-12-27 17:59:53.125 DEBUG 13660 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 17:59:53.193 DEBUG 13660 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 17:59:53.194 DEBUG 13660 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 17:59:53.194 DEBUG 13660 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 17:59:53.195 DEBUG 13660 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:00:02.169 DEBUG 13660 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 18:00:02.169 DEBUG 13660 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:00:02.170 DEBUG 13660 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:00:02.171 DEBUG 13660 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:00:09.249 DEBUG 13660 --- [http-nio-9090-exec-1] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.2
+2018-12-27 18:00:31.118 DEBUG 13660 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.16666666666666666
+2018-12-27 18:00:31.122 DEBUG 13660 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:00:31.123 DEBUG 13660 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:00:31.125 DEBUG 13660 --- [http-nio-9090-exec-6] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:00:33.538 DEBUG 13660 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.14285714285714285
+2018-12-27 18:00:33.539 DEBUG 13660 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 18:00:33.542 DEBUG 13660 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222221(String)
+2018-12-27 18:00:33.545 DEBUG 13660 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 18:00:37.712 DEBUG 13660 --- [http-nio-9090-exec-10] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.125
+2018-12-27 18:00:37.712 DEBUG 13660 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:00:37.712 DEBUG 13660 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 18:00:37.713 DEBUG 13660 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:00:42.502 DEBUG 13660 --- [http-nio-9090-exec-3] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.1111111111111111
+2018-12-27 18:00:42.503 DEBUG 13660 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:00:42.504 DEBUG 13660 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:00:42.504 DEBUG 13660 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:01:09.572 DEBUG 13660 --- [http-nio-9090-exec-9] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.1
+2018-12-27 18:01:09.573 DEBUG 13660 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:01:09.575 DEBUG 13660 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:01:09.580 DEBUG 13660 --- [http-nio-9090-exec-9] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:01:13.003 DEBUG 13660 --- [http-nio-9090-exec-10] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.09090909090909091
+2018-12-27 18:01:13.005 DEBUG 13660 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 18:01:13.005 DEBUG 13660 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222221(String)
+2018-12-27 18:01:13.008 DEBUG 13660 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 18:01:16.407 DEBUG 13660 --- [http-nio-9090-exec-1] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.08333333333333333
+2018-12-27 18:01:16.408 DEBUG 13660 --- [http-nio-9090-exec-1] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:01:16.408 DEBUG 13660 --- [http-nio-9090-exec-1] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 18:01:16.409 DEBUG 13660 --- [http-nio-9090-exec-1] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:01:21.424 DEBUG 13660 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.07692307692307693
+2018-12-27 18:01:21.424 DEBUG 13660 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:01:21.425 DEBUG 13660 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:01:21.426 DEBUG 13660 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:02:21.575 DEBUG 13660 --- [http-nio-9090-exec-7] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.07142857142857142
+2018-12-27 18:02:21.575 DEBUG 13660 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:02:21.576 DEBUG 13660 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 18:02:21.578 DEBUG 13660 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:05:17.778  INFO 9304 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on nkgw10nh2005 with PID 9304 (E:\IdeaProjects\tribune\target\classes started by Lili.Chen in E:\IdeaProjects\tribune)
+2018-12-27 18:05:17.785  INFO 9304 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-12-27 18:05:17.937  INFO 9304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-27 18:05:17.937  INFO 9304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-27 18:05:20.042  INFO 9304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2018-12-27 18:05:20.067  INFO 9304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-27 18:05:20.067  INFO 9304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-27 18:05:20.073  INFO 9304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_162\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\maven\apache-maven-3.1.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_162\bin;D:\mysql-5.7.21-winx64\bin;D:\apache-tomcat-7.0.70\bin;D:\Git\cmd;C:\Users\lili.chen\AppData\Local\Microsoft\WindowsApps;;.]
+2018-12-27 18:05:20.178  INFO 9304 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring embedded WebApplicationContext
+2018-12-27 18:05:20.178  INFO 9304 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2241 ms
+2018-12-27 18:05:20.298  INFO 9304 --- [MLog-Init-Reporter] com.mchange.v2.log.MLog                  : MLog clients using slf4j logging.
+2018-12-27 18:05:20.331  INFO 9304 --- [restartedMain] com.mchange.v2.c3p0.C3P0Registry         : Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-12-27 18:05:21.317  INFO 9304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-27 18:05:21.379  INFO 9304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/demo'
+2018-12-27 18:05:21.384  INFO 9304 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 4.223 seconds (JVM running for 5.116)
+2018-12-27 18:05:35.202  INFO 9304 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-27 18:05:35.203  INFO 9304 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-27 18:05:35.218  INFO 9304 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2018-12-27 18:05:38.394 DEBUG 9304 --- [http-nio-9090-exec-2] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 18:05:38.430  INFO 9304 --- [http-nio-9090-exec-2] c.m.v.c.i.AbstractPoolBackedDataSource   : Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2wxpo89z1uck3swni7czu|2015d67, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 2wxpo89z1uck3swni7czu|2015d67, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/homework2?useUnicode=true&characterEncoding=utf8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-12-27 18:05:38.546 DEBUG 9304 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:05:38.567 DEBUG 9304 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:05:38.584 DEBUG 9304 --- [http-nio-9090-exec-2] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:05:42.613 DEBUG 9304 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 18:05:42.614 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 18:05:42.614 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222221(String)
+2018-12-27 18:05:42.616 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 0
+2018-12-27 18:05:42.670 DEBUG 9304 --- [http-nio-9090-exec-5] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 18:05:42.671 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:05:42.671 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: null
+2018-12-27 18:05:42.672 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:05:52.289 DEBUG 9304 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 18:05:52.290 DEBUG 9304 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:05:52.290 DEBUG 9304 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:05:52.291 DEBUG 9304 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:08:58.681 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : ==>  Preparing: select login_record.* from login_record where u_phone=? 
+2018-12-27 18:08:58.682 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : ==> Parameters: null
+2018-12-27 18:08:58.684 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : <==      Total: 0
+2018-12-27 18:09:09.280 DEBUG 9304 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 18:09:09.280 DEBUG 9304 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==>  Preparing: select user.* from user where name=? 
+2018-12-27 18:09:09.281 DEBUG 9304 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : ==> Parameters: 大(String)
+2018-12-27 18:09:09.283 DEBUG 9304 --- [http-nio-9090-exec-8] c.e.demo.dao.UserDao.queryUserByName     : <==      Total: 0
+2018-12-27 18:09:13.312 DEBUG 9304 --- [http-nio-9090-exec-10] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 18:09:13.312 DEBUG 9304 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByPhone    : ==>  Preparing: select user.* from user where phone=? 
+2018-12-27 18:09:13.313 DEBUG 9304 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByPhone    : ==> Parameters: 18322222222(String)
+2018-12-27 18:09:13.317 DEBUG 9304 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserByPhone    : <==      Total: 1
+2018-12-27 18:09:14.957 DEBUG 9304 --- [http-nio-9090-exec-1] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.14285714285714285
+2018-12-27 18:09:16.737 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : ==>  Preparing: select login_record.* from login_record where u_phone=? 
+2018-12-27 18:09:16.738 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : ==> Parameters: 18322222222(String)
+2018-12-27 18:09:16.739 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : <==      Total: 0
+2018-12-27 18:09:16.739 DEBUG 9304 --- [http-nio-9090-exec-3] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.25
+2018-12-27 18:09:16.787 DEBUG 9304 --- [http-nio-9090-exec-3] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.3333333333333333
+2018-12-27 18:09:16.787 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : ==>  Preparing: select login_record.* from login_record where u_phone=? 
+2018-12-27 18:09:16.788 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : ==> Parameters: 18322222222(String)
+2018-12-27 18:09:16.789 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.d.d.L.querryRecordByPhone            : <==      Total: 0
+2018-12-27 18:09:16.789 DEBUG 9304 --- [http-nio-9090-exec-3] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.3
+2018-12-27 18:09:16.789 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserById       : ==>  Preparing: select user.* from user where id=? 
+2018-12-27 18:09:16.790 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserById       : ==> Parameters: 16(Integer)
+2018-12-27 18:09:16.791 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.UserDao.queryUserById       : <==      Total: 1
+2018-12-27 18:09:16.792 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==>  Preparing: select score.* from score where u_id=? 
+2018-12-27 18:09:16.792 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==> Parameters: 16(Integer)
+2018-12-27 18:09:16.794 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.ScoreDao.querryScoreByUid   : <==      Total: 1
+2018-12-27 18:09:16.795 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 18:09:16.795 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 2(Integer)
+2018-12-27 18:09:16.797 DEBUG 9304 --- [http-nio-9090-exec-3] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 18:09:19.578 DEBUG 9304 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.2727272727272727
+2018-12-27 18:09:19.578 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserById       : ==>  Preparing: select user.* from user where id=? 
+2018-12-27 18:09:19.578 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserById       : ==> Parameters: 16(Integer)
+2018-12-27 18:09:19.580 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.UserDao.queryUserById       : <==      Total: 1
+2018-12-27 18:09:19.581 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 18:09:19.581 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 2(Integer)
+2018-12-27 18:09:19.582 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 18:09:19.583 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.d.ArticleDao.findArticleListIndex  : ==>  Preparing: select article.* ,user.name from article,user where user.id=article.u_id 
+2018-12-27 18:09:19.583 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.d.ArticleDao.findArticleListIndex  : ==> Parameters: 
+2018-12-27 18:09:19.589 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.d.ArticleDao.findArticleListIndex  : <==      Total: 11
+2018-12-27 18:09:19.591 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.dao.ArticleDao.queryArticleList    : ==>  Preparing: select * from article 
+2018-12-27 18:09:19.592 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.dao.ArticleDao.queryArticleList    : ==> Parameters: 
+2018-12-27 18:09:19.597 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.dao.ArticleDao.queryArticleList    : <==      Total: 11
+2018-12-27 18:09:19.598 DEBUG 9304 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.3333333333333333
+2018-12-27 18:09:19.599 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==>  Preparing: select score.* from score where u_id=? 
+2018-12-27 18:09:19.599 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==> Parameters: 16(Integer)
+2018-12-27 18:09:19.601 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.ScoreDao.querryScoreByUid   : <==      Total: 1
+2018-12-27 18:09:19.601 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 18:09:19.602 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 2(Integer)
+2018-12-27 18:09:19.603 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 18:09:19.604 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.d.R.queryRolePowerByRoleId         : ==>  Preparing: select role_power.*,role.role_name,power.power_name from role_power,role,power where roles_id=? and role_power.powers_id=power.power_id and role_power.roles_id=role.role_id 
+2018-12-27 18:09:19.604 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.d.R.queryRolePowerByRoleId         : ==> Parameters: 2(Integer)
+2018-12-27 18:09:19.605 DEBUG 9304 --- [http-nio-9090-exec-4] c.e.d.d.R.queryRolePowerByRoleId         : <==      Total: 0
+2018-12-27 18:09:20.843 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.dao.ArticleDao.queryArticleById    : ==>  Preparing: select article.* from article where article_id=? 
+2018-12-27 18:09:20.844 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.dao.ArticleDao.queryArticleById    : ==> Parameters: 66(Integer)
+2018-12-27 18:09:20.845 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.dao.ArticleDao.queryArticleById    : <==      Total: 1
+2018-12-27 18:09:20.845 DEBUG 9304 --- [http-nio-9090-exec-5] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.38461538461538464
+2018-12-27 18:09:20.846 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==>  Preparing: select score.* from score where u_id=? 
+2018-12-27 18:09:20.846 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==> Parameters: 16(Integer)
+2018-12-27 18:09:20.847 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.demo.dao.ScoreDao.querryScoreByUid   : <==      Total: 1
+2018-12-27 18:09:20.848 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.dao.ArticleDao.queryArticleById    : ==>  Preparing: select article.* from article where article_id=? 
+2018-12-27 18:09:20.848 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.dao.ArticleDao.queryArticleById    : ==> Parameters: 66(Integer)
+2018-12-27 18:09:20.849 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.dao.ArticleDao.queryArticleById    : <==      Total: 1
+2018-12-27 18:09:20.850 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.d.C.queryCommentListByArticleId    : ==>  Preparing: select * from(SELECT comment.*,user.name FROM comment,user WHERE article_id=? and user.id=comment.u_id )a left outer join (SELECT user.`name` as to_name,c.to_u_id as x FROM comment AS c,user where c.to_u_id=user.id)b on b.x=a.to_u_id 
+2018-12-27 18:09:20.850 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.d.C.queryCommentListByArticleId    : ==> Parameters: 66(Integer)
+2018-12-27 18:09:20.853 DEBUG 9304 --- [http-nio-9090-exec-5] c.e.d.d.C.queryCommentListByArticleId    : <==      Total: 3
+2018-12-27 18:09:25.463 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.dao.ArticleDao.queryArticleById    : ==>  Preparing: select article.* from article where article_id=? 
+2018-12-27 18:09:25.464 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.dao.ArticleDao.queryArticleById    : ==> Parameters: 4(Integer)
+2018-12-27 18:09:25.467 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.dao.ArticleDao.queryArticleById    : <==      Total: 1
+2018-12-27 18:09:25.468 DEBUG 9304 --- [http-nio-9090-exec-6] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.42857142857142855
+2018-12-27 18:09:25.469 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==>  Preparing: select score.* from score where u_id=? 
+2018-12-27 18:09:25.469 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==> Parameters: 16(Integer)
+2018-12-27 18:09:25.471 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.demo.dao.ScoreDao.querryScoreByUid   : <==      Total: 1
+2018-12-27 18:09:25.472 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.dao.ArticleDao.queryArticleById    : ==>  Preparing: select article.* from article where article_id=? 
+2018-12-27 18:09:25.473 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.dao.ArticleDao.queryArticleById    : ==> Parameters: 4(Integer)
+2018-12-27 18:09:25.475 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.dao.ArticleDao.queryArticleById    : <==      Total: 1
+2018-12-27 18:09:25.476 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.d.C.queryCommentListByArticleId    : ==>  Preparing: select * from(SELECT comment.*,user.name FROM comment,user WHERE article_id=? and user.id=comment.u_id )a left outer join (SELECT user.`name` as to_name,c.to_u_id as x FROM comment AS c,user where c.to_u_id=user.id)b on b.x=a.to_u_id 
+2018-12-27 18:09:25.478 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.d.C.queryCommentListByArticleId    : ==> Parameters: 4(Integer)
+2018-12-27 18:09:25.482 DEBUG 9304 --- [http-nio-9090-exec-6] c.e.d.d.C.queryCommentListByArticleId    : <==      Total: 3

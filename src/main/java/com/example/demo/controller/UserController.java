@@ -310,7 +310,7 @@ public class UserController {
         ImageValidateUtil imageValidate=new ImageValidateUtil(80,30,4,2);
         String imageCode=imageValidate.getCode();
         BufferedImage buffImg =imageValidate.getBuffImg();
-        session.setAttribute("image_code",imageCode);
+        session.setAttribute("imageCode",imageCode);
         ImageIO.write(buffImg,"JPEG",response.getOutputStream());
         session.removeAttribute("code");
         return "success";
