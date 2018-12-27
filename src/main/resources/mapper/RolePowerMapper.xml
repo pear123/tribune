@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.RolePowerDao">
+
+
+    <resultMap id="rolePowerCustomMap" type="rolePowerCustom">
+        <id property="rolePowerId" column="role_power_id"/>
+        <result property="rolesId" column="roles_id"/>
+        <result property="powersId" column="powers_id"/>
+        <association property="role" javaType="Role">
+            <id property="roleId" column="role_id"/>
+            <result property="roleName" column="role_name"/>
+        </association>
+        <association property="power" javaType="Power">
+            <id property="powerId" column="power_id"/>
+            <result property="powerName" column="power_name"/>
+        </association>
+    </resultMap>
+
+    <insert id="addRolePower" parameterType="rolePower">
+        insert into role_power(roles_id,powers_id)values (#{rolesId},#{powersId})
+    </insert>
+    <delete id="deleteRolePower" parameterType="Integer">
+        delete from role_power where role_power_id=#{rolePowerId}
+    </delete>
+
+    <select id="queryRolePowerById" parameterType="Integer" resultMap="rolePowerCustomMap">
+        select role_power.* from role_power where role_power_id=#{rolePowerId}
+    </select>
+    <select id="queryRolePowerByPowerId" parameterType="Integer" resultMap="rolePowerCustomMap">
+        select role_power.*,role.role_name,power.power_name from role_power,role,power where powers_id=#{powersId} and
+        role_power.powers_id=power.power_id and role_power.roles_id=role.role_id
+    </select>
+
+    <select id="queryRolePowerByRoleId" parameterType="Integer" resultMap="rolePowerCustomMap">
+        select role_power.*,role.role_name,power.power_name from role_power,role,power where roles_id=#{rolesId} and
+        role_power.powers_id=power.power_id and role_power.roles_id=role.role_id
+    </select>
+
+    <select id="queryRolePowerList"  resultMap="rolePowerCustomMap">
+        select role_power.*,role.role_name,power.power_name from role_power,role,power
+    </select>
+
+    <insert id="batchAddRolePower" parameterType="java.util.List">
+        insert into role_power(roles_id,powers_id)
+        VALUES
+        <foreach collection="list" item="rolePower" index="index" separator=",">
+            (#{rolePower.rolesId},#{rolePower.powersId})
+        </foreach>
+    </insert>
+</mapper>

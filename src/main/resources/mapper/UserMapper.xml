@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDao">
+    <cache
+            eviction="FIFO"
+    flushInterval="10000"
+    size="512"
+    readOnly="true"/>
+    <resultMap id="userMap" type="user">
+        <id property="id" column="id"/>
+        <result property="phone" column="phone"></result>
+        <result property="name" column="name"></result>
+        <result property="password" column="password"></result>
+        <result property="roleId" column="role_id"></result>
+    </resultMap>
+    <resultMap id="userCustomMap" type="userCustom">
+        <id property="id" column="id"/>
+        <result property="phone" column="phone"></result>
+        <result property="name" column="name"></result>
+        <result property="password" column="password"></result>
+        <result property="roleId" column="role_id"></result>
+        <association property="role" javaType="Role">
+            <result property="roleName" column="role_name"/>
+        </association>
+    </resultMap>
+    <select id="queryUser"  resultMap="userMap">
+        select * from user
+    </select>
+    <insert id="addUser" parameterType="User">
+        insert into User(phone,password,name,role_id)values (#{phone},#{password},#{name},2)
+    </insert>
+    <update id="updatePassword" parameterType="UserVo">
+         update User set password=#{user.password} where phone=#{user.phone} and #{user.password}=#{rePassword}
+    </update>
+    <update id="updateRole" parameterType="user">
+         update User set role_id=#{roleId} where id=#{id}
+    </update>
+    <select id="queryUserByPhone" parameterType="String" resultMap="userMap">
+        select user.* from user where phone=#{phone}
+    </select>
+    <select id="queryUserByName" parameterType="String" resultMap="userMap">
+        select user.* from user where name=#{name}
+    </select>
+    <select id="queryUserListByRoleId" parameterType="Integer" resultMap="userMap">
+        select user.* from user where role_id=#{roleId}
+    </select>
+    <select id="queryUserById" parameterType="Integer" resultMap="userMap">
+        select user.* from user where id=#{id}
+    </select>
+    <select id="queryUserList" resultMap="userCustomMap">
+        select user.*,role.role_name from user,role where role.role_id=user.role_id
+    </select>
+
+    <insert id="addUserWithObject" parameterType="com.example.demo.entity.User">
+    <selectKey resultType="int" order="AFTER" keyProperty="id">
+        select LAST_INSERT_ID() as id
+    </selectKey>
+    insert INTO user(phone,password,name)
+    VALUES (#{phone},#{password},#{name})
+</insert>
+    <insert id="battchAddUsers" parameterType="java.util.List">
+        insert into user(phone,password)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.phone,jdbcType=VARCHAR},#{item.password,jdbcType=VARCHAR})
+        </foreach>
+    </insert>
+</mapper>

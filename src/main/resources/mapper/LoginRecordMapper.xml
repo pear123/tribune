@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.LoginRecordDao">
+    <resultMap id="loginRecordMap" type="LoginRecord">
+        <id property="loginRecordId" column="login_record_id"/>
+        <result property="loginDate" column="login_date"></result>
+        <result property="uPhone" column="u_phone"></result>
+        <result property="failNum" column="fail_num"></result>
+        <result property="lockFlag" column="lock_flag"></result>
+    </resultMap>
+    <insert id="addRecord" parameterType="loginRecord">
+        insert into login_record(u_phone,login_date,fail_num,lock_flag)values (#{uPhone},#{loginDate},#{failNum},#{lockFlag})
+    </insert>
+    <update id="updateRecord" parameterType="loginRecord">
+         update login_record set login_date=#{loginDate},fail_num=#{failNum},lock_flag=#{lockFlag} where login_record_id=#{loginRecordId}
+    </update>
+    <select id="querryRecordByPhone" parameterType="String" resultMap="loginRecordMap">
+        select login_record.* from login_record where u_phone=#{uPhone}
+    </select>
+    <select id="querryRecordById" parameterType="Integer" resultMap="loginRecordMap">
+        select login_record.* from login_record where login_record_id=#{loginRecordId}
+    </select>
+    <delete id="deleteRecord" parameterType="Integer">
+        delete from login_record where login_record_id=#{loginRecordId}
+    </delete>
+</mapper>

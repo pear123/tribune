@@ -1,0 +1,27 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /demo
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/homework2?useUnicode=true&characterEncoding=utf8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong
+    username: root
+
+    password: root
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+
+
+mybatis:
+  mapper-locations: mapper/**/*xml
+  type-aliases-package: com.example.demo.entity
+
+logging:
+  file: E://IdeaProjects/tribune/tribune.log
+  level:
+    com.example.demo.dao: debug
+
+
+
+

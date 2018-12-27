@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.CommentDao">
+
+
+    <resultMap id="commentMap" type="comment">
+        <id property="commentId" column="comment_id"/>
+        <result property="articleId" column="article_id"></result>
+        <result property="uId" column="u_id"></result>
+        <result property="content" column="content"></result>
+        <result property="commentCreatetime" column="comment_createtime"></result>
+    </resultMap>
+
+    <resultMap id="commentCustomMap" type="commentCustom">
+        <id property="commentId" column="comment_id"/>
+        <result property="articleId" column="article_id"></result>
+        <result property="uId" column="u_id"></result>
+        <result property="content" column="content"></result>
+        <result property="commentCreatetime" column="comment_createtime"></result>
+        <association property="user" javaType="User">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+
+    <insert id="addComment" parameterType="comment">
+        insert into comment(article_id,u_id,content,comment_createtime)values (#{articleId},#{uId},#{content},#{commentCreatetime})
+    </insert>
+    <update id="updateComment" parameterType="comment">
+         update comment set content=#{content} where comment_id=#{commentId}
+    </update>
+    <select id="queryCommentById" parameterType="Integer" resultMap="commentMap">
+        select comment.* from comment where comment_id=#{commentId}
+    </select>
+    <delete id="deleteComment" parameterType="Integer">
+        delete from comment where comment_id=#{commentId}
+    </delete>
+    <select id="queryCommentListByArticleId" parameterType="Integer" resultMap="commentCustomMap">
+        select comment.*,user.name from comment,user where article_id=#{articleId} and comment.u_id=user.id
+    </select>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.ScoreDao">
+    <resultMap id="scoreMap" type="score">
+        <id property="sId" column="s_id"/>
+        <result property="sc" column="sc"></result>
+        <result property="uId" column="u_id"></result>
+    </resultMap>
+    <insert id="addScore" parameterType="score">
+        insert into score(sc,u_id)values (#{sc},#{uId})
+    </insert>
+    <update id="updateScore" parameterType="score">
+         update score set sc=#{sc} where s_id=#{sId}
+    </update>
+    <select id="querryScoreById" parameterType="Integer" resultMap="scoreMap">
+        select score.* from score where s_id=#{sId}
+    </select>
+    <select id="querryScoreByUid" parameterType="Integer" resultMap="scoreMap">
+        select score.* from score where u_id=#{uId}
+    </select>
+</mapper>

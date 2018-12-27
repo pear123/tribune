@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+    <style>
+
+
+    </style>
+
+</head>
+<body>
+<hr/>
+<a th:href="@{/myUser/getFirstPage(uId=${uId})}">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myPower/powerManager(uId=${uId})}">权限管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myRole/roleManager(uId=${uId})}">角色管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myUser/userManager(uId=${uId})}">用户管理</a>
+<br/>
+<hr/>
+<input hidden th:value="${uId}" id="uId">
+<center>
+    <table border="1" cellpadding="0" cellspacing="0" width="600px">
+        <caption>用户管理列表</a></caption>
+        <tr><td>用户号码</td><td>用户名字</td><td>角色名字</td><td>操作</td></tr>
+        <a th:if="${not#lists.isEmpty(userList)}">
+            <tbody  th:each="user,iterStat : ${userList}">
+            <tr>
+                <td th:text="${user.phone}"></td>
+                <td th:text="${user.name}"></td>
+                <td>
+                    <select th:id="'role_'+${user.id}"  style="width:150px">
+                       <!-- <a th:if="${not#lists.isEmpty(user.role.roleName)}">-->
+                        <option th:value="${user.role.roleName}" th:text="${user.role.roleName}"></option>
+                       <!-- </a>
+                        <a th:if="${#lists.isEmpty(user.role.roleName)}">
+                            <option th:text="null"></option>
+                        </a>-->
+                        <a th:each="role,iterStat : ${roleList}">
+                            <option th:value="${role.getRoleName()}" th:text="${role.getRoleName()}"></option>
+                        </a>
+                    </select>
+                </td>
+                <td align="center"><input type="button" value="重新赋予角色" th:onclick="'javascript:giveRole('+${user.id}+',)'"></input>
+                </td>
+            </tr>
+            </tbody>
+        </a>
+    </table>
+</center>
+
+<script th:inline="javascript">
+    function giveRole(id) {
+        var aimId="#role_"+id
+        var roleName=$(aimId).val();
+            var confirm_ = confirm('确认重新赋予角色？');
+            if(confirm_){
+                $.ajax({
+                    ContentType:"application/json;charset=UTF-8",
+                    type:"post",
+                    url:"/demo/myRole/giveRole",
+                    data:{"uId":id,"roleName":roleName},
+                    success:function (msg) {
+                        if(msg=="success"){
+                            alert("重新赋予成功");
+                        }else if(msg=="fail") {
+                            alert("赋予失败");
+                        }else{
+                            alert(msg);
+                        }
+                    }
+                })
+            }
+
+    }
+
+
+</script>
+</body>
+</html>

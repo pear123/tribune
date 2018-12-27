@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+    <style>
+        #div1{
+            width: 50%;
+            height: 500px;
+            background-color: antiquewhite;
+        }
+        #div2{
+            width: 80%;
+            height: 400px;
+            background-color: white;
+        }
+        #content{
+            width: 100%;
+            height: 100%;
+        }
+        #commentDiv{
+            width: 50%;
+            height: 150px;
+            border:1px solid #000;
+            background-color: antiquewhite;
+        }
+        #divHeader{
+            width: 100%;
+            height: 25px;
+
+
+        }
+        #divContent{
+            width: 100%;
+            height: 100px;
+
+        }
+        #time{
+            width: 100%;
+            height: 25px;
+
+        }
+        #commentContent{
+            width: 90%;
+            height: 90px;
+           border-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<hr/>
+<br/>
+<a th:href="@{/myUser/getFirstPage(uId=${uId})}">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myArticle/getMyArticle(uId=${uId})}">我的页面</a>
+<hr/>
+<input hidden id="uId" th:value="${uId}">
+<input hidden id="articleId" th:value="${article.articleId}">
+<center>
+    <div id="div1">
+        <form id="frm">
+            标题：<input type="text" id="title" readonly name="title" th:value="${article.title}">
+            <br/>
+            <center>
+                <div id="div2">
+                    <textarea readonly type="text" id="content" name="content" th:text="${article.content}"></textarea>
+                </div>
+                <br/>
+                <a href="#" th:onclick="'javascript:toComment('+${article.articleId}+')'">进行评论</a>&nbsp;&nbsp;&nbsp;
+                <!--<a th:href="@{/myUser/getFirstPage(uId=${uId},score=${score})}">退出</a>-->
+                <a href="javaScript:history.back(-1)">退出</a>
+            </center>
+        </form>
+    </div>
+
+    <div id="commentList" th:each="commentCustom,iterStat : ${commentList}">
+        <br/>
+        <center>
+        <div id="commentDiv">
+            <div id="divHeader">
+            <span style="float: left" th:text="${commentCustom.user.name}+'回复：'"/>
+            </div>
+            <div id="divContent">
+                <textarea readonly type="text" id="commentContent" name="commentContent" th:text="${commentCustom.content}"></textarea>
+            </div>
+            <div id="time">
+                <a th:if="${commentCustom.uId==uId} or ${uId==1}">
+                <a style="float: left;text-decoration: none" href="#" th:onclick="'javascript:deleteComment('+${commentCustom.commentId}+')'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除评论</a>
+                </a>
+                <span style="float: right" th:text="${#dates.format(commentCustom.commentCreatetime, 'yyyy-MM-dd')}"/><br/>
+            </div>
+        </div>
+        </center>
+    </div>
+</center>
+<script type="text/javascript">
+    //删除评论
+    function deleteComment(commentId) {
+        var confirm_=confirm('确认删除评论？');
+        var uId=$("#uId").val();
+        var articleId=$("#articleId").val();
+        if(confirm_){
+            $.ajax({
+                type:"post",
+                url:"/demo/myComment/deleteComment",
+                data:"commentId="+commentId,
+                success:function (msg) {
+                    if(msg=="success"){
+                        alert("删除成功")
+                        window.location.href="/demo/myArticle/articleDetails?uId="+uId+"&articleId="+articleId;
+                    }else{
+                        alert("删除失败");
+                    }
+                }
+            })
+        }
+    }
+
+    function toComment(articleId) {
+        var content=window.prompt("请输入你的评论","");
+        var uId=$("#uId").val();
+        if(content==""||content==""){
+            alert("评论不能为空");
+        }else if(content!=null){
+            var confirm_ = confirm('确认进行评论？');
+            if(confirm_){
+                $.ajax({
+                    ContentType:"application/json;charset=UTF-8",
+                    type:"post",
+                    url:"/demo/myComment/addComment",
+                    data:{"content":content,"uId":uId,"articleId":articleId},
+                    success:function (msg) {
+                        if(msg=="success"){
+                            alert("评论成功")
+                            window.location.href="/demo/myArticle/articleDetails?uId="+uId+"&articleId="+articleId;
+                        }else {
+                            alert("评论失败");
+                        }
+                    }
+                })
+            }
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

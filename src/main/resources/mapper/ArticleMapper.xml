@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.ArticleDao">
+
+    <resultMap id="articleMap" type="article">
+        <id property="articleId" column="article_id"/>
+        <result property="createtime" column="createtime"></result>
+        <result property="title" column="title"></result>
+        <result property="content" column="content"></result>
+        <result property="uId" column="u_id"></result>
+        <result property="commentCount" column="comment_count"></result>
+        <result property="lastCommentCreatetime" column="last_comment_createtime"></result>
+    </resultMap>
+    <resultMap id="articleCustomMap" type="articleCustom">
+        <id property="articleId" column="article_id"/>
+        <result property="createtime" column="createtime"></result>
+        <result property="title" column="title"></result>
+        <result property="content" column="content"></result>
+        <result property="uId" column="u_id"></result>
+        <result property="commentCount" column="comment_count"></result>
+        <result property="lastCommentCreatetime" column="last_comment_createtime"></result>
+        <association property="user" javaType="User">
+            <id column="id" property="id"/>
+           <!-- <result column="phone" property="phone"/>
+            <result column="password" property="password"/>-->
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+    <select id="queryArticleList"  resultMap="articleMap">
+        select * from article
+    </select>
+    <insert id="addArticle" parameterType="article">
+        <selectKey resultType="Integer" order="AFTER" keyProperty="articleId">
+            select LAST_INSERT_ID() as article_id
+        </selectKey>
+        insert into article(createtime,title,content,u_id,comment_count)values (#{createtime},#{title},#{content},#{uId},0)
+    </insert>
+    <delete id="deleteArticle" parameterType="Integer">
+        delete from article where article_id=#{articleId}
+    </delete>
+    <update id="updateArticle" parameterType="article">
+         update article set content=#{content},title=#{title} where article_id=#{articleId}
+    </update>
+    <update id="updateArticleCommentTime" parameterType="article">
+         update article set last_comment_createtime=#{lastCommentCreatetime},comment_count=#{commentCount} where article_id=#{articleId}
+    </update>
+    <update id="updateArticleCommentCount" parameterType="article">
+         update article set comment_count=#{commentCount} where article_id=#{articleId}
+    </update>
+    <select id="queryArticleByUId" parameterType="Integer" resultMap="articleMap">
+        select article.* from article where u_id=#{uId}
+    </select>
+    <select id="queryArticleById" parameterType="Integer" resultMap="articleMap">
+        select article.* from article where article_id=#{articleId}
+    </select>
+    <!--<select id="findArticleListIndexByUid" parameterType="Object" resultMap="articleCustomMap">
+      select article.*,user.name from article,user where u_id=#{uId} and user.id=article.u_id limit #{beginIndex},#{size}
+    </select>-->
+    <select id="findArticleListIndexByUid" parameterType="Object" resultMap="articleCustomMap">
+      select article.*,user.name from article,user where u_id=#{uId} and user.id=article.u_id
+    </select>
+    <select id="findArticleListIndex"  resultMap="articleCustomMap">
+      select article.* ,user.name from article,user where user.id=article.u_id
+    </select>
+</mapper>

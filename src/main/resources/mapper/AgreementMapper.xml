@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.AgreementDao">
+    <resultMap id="agreementMap" type="agreement">
+        <id property="id" column="id"/>
+        <result property="content" column="content"></result>
+        <result property="name" column="name"></result>
+    </resultMap>
+    <insert id="addAgreement" parameterType="agreement">
+        insert into agreement(content,name)values (#{content},#{name})
+    </insert>
+    <update id="updateAgreement" parameterType="agreement">
+         update agreement set content=#{content} where a_id=#{aId}
+    </update>
+    <select id="queryAgreementById" parameterType="Integer" resultMap="agreementMap">
+        select agreement.* from agreement where a_id=#{aId}
+    </select>
+    <select id="queryAgreementByName" parameterType="String" resultMap="agreementMap">
+        select agreement.* from agreement where name=#{name}
+    </select>
+    <delete id="deleteAgreement" parameterType="Integer">
+        delete from agreement where a_id=#{aId}
+    </delete>
+</mapper>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+    <style>
+        #divImg{
+            width: 100%;
+            height: 700px;
+            float: left;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div style="text-align: left;width: 50%;" >
+</div>
+<div style="text-align: right;">
+    <a th:if="${not#lists.isEmpty(name)}">
+        <span th:text="'欢迎'+ ${name}+'登录！'"></span>
+    </a>
+    <a onclick="updatePassword()" href="#">修改密码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/demo/myUser/getLogin">登录</a>&nbsp;&nbsp;&nbsp;
+    <a href="/demo/myUser/getRegister">注册</a>
+    <hr/>
+</div>
+<a th:href="@{/myUser/getFirstPage(uId=${uId})}">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myArticle/getMyArticle(uId=${uId})}">我的页面</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myPower/powerManager(uId=${uId})}">权限管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myRole/roleManager(uId=${uId})}">角色管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myUser/userManager(uId=${uId})}">用户管理</a>
+<div id="divImg" ><img src="../images/7.jpg" width="35%" /></div>
+
+
+<script type="text/javascript">
+
+    //修改密码
+    function updatePassword() {
+        var uId=$("#uId").val();
+        var password=window.prompt("请输入新的密码","");
+        var rePassword=window.prompt("请再次输入你的密码","");
+        if(password==""||rePassword==""){
+            alert("密码不能为空");
+        } if(password.length<4){
+            alert("密码不能小于四位数");
+        }else if(password!=rePassword){
+            alert("两次密码需要一致");
+        }else if(password!=null&&rePassword!=null){
+            var confirm_ = confirm('确认修改密码？');
+            if(confirm_){
+                $.ajax({
+                    ContentType:"application/json;charset=UTF-8",
+                    type:"post",
+                    url:"/demo/myUser/updatePassword",
+                    data:{"password":password,"rePassword":rePassword,"uId":uId},
+                    success:function (msg) {
+                        if(msg=="success"){
+                            alert("密码更改成功,请重新登录")
+                            window.location.href="/demo/myUser/getLogin";
+                        }else {
+                            alert("更改失败");
+                        }
+                    }
+                })
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

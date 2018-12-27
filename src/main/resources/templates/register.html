@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+    <style type="text/css">
+        #div2{
+            width: 50%;
+            height: 400px;
+            float: left;
+        }
+        #div3{
+            width: 50%;
+            height:400px;
+            float: left;
+        }
+        .btn{
+            width: 125px;
+            height: 40px;
+        }
+        .input1{
+            width: 250px;
+            height:40px;
+        }
+        .number{
+            width: auto;
+            height: 40px;
+        }
+        #span1{
+            width: auto;
+            height: 50px;
+        }
+
+    </style>
+<body>
+<div id="div1">
+    <div id="div2" ><img src="../images/1.png" width="100%"></div>
+    <div id="div3">
+        <br/>
+        <br/>
+        <br/>
+        <center>
+            <form id="frm">
+                <table>
+                    <!-- value="短信验证码"  onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue; this.style.color='#999'}" style="color:#999"-->
+                    <tr><td colspan="2"><input id="name" name="name"  class="input1" placeholder="请输入你的用户名"/></td>
+                        <td><span id="span5" style="color: red"></span></td>
+                    </tr>
+                    <tr><td colspan="2"><input id="phone" name="phone"  class="input1" placeholder="请输入手机号码"/></td>
+                        <td><span id="span2" style="color: red"></span></td>
+                    </tr>
+                    <tr><td><input class="number"type="number" id="massageNumber" placeholder="短信验证码"  /></td>
+                        <td><input id="btn1" type="button" value="获取验证码"></td><td><span id="span4" style="color: red"></span></td>
+                    </tr>
+                    <tr id="tr1" hidden><td><input type="text" class="number" id="codeNumber"></td><td> <img id="_img"  src="getCaptchaCode.action">
+                        <a href="#" id="btn3" onclick="changeCode()">看不清，换一张</a></td><td><input id="btn4" type="button" value="确定"></td>
+                    </tr>
+                    <tr><td colspan="2"><input type="password" class="input1" name="password" id="password" placeholder="密码" />
+                    </td>
+                        <td><span id="span3" style="color: red"></span></td>
+                    </tr>
+                    <tr><td colspan="3"><input id="agreement" type="checkbox">我已经阅读并同意<a href="/demo/myAgreement/queryAgreement">《用户注册协议》</a></td></tr>
+                    <tr ><td colspan="3"><span id="span1" style="color: white">0</span></td></tr>
+                    <tr><td ><input class="btn" id="btn2" type="button" value="注册"></td>
+                        <td><input class="btn" type="reset" value="重置"></td><td></td>
+                    </tr>
+                    <tr><td colspan="2"><a href="/demo/myUser/getLogin" style="color: black">返回登陆</a></td>
+                    </tr>
+                </table>
+            </form>
+            <br/>
+            <span style="color: red">*注册后即可得500积分哦</span>
+        </center>
+
+    </div>
+</div>
+</body>
+<script th:inline="javascript">
+    $("#name").blur(function () {
+        var name=$(this).val();
+        if(name==null||name==""){
+            $("#span5").html("*用户名不可为空");
+        }else{
+            $.ajax({
+                type: "post",
+                url: "/demo/myUser/validateName",
+                data: "name=" + name,
+                success: function (msg) {
+                    if (msg == "exit") {
+                        $("#span5").html("该用户名已经存在");
+                    }else{
+                        $("#span5").html("");
+                    }
+                }
+            })
+
+        }
+    })
+    $("#password").blur(function () {
+        var password=$(this).val();
+        if(password==null||password==""){
+            $("#span3").html("*密码不可为空");
+        }else{
+            $("#span3").html("");
+        }
+    })
+
+    $("#btn4").click(function () {
+        var codeNumber=$("#codeNumber").val();
+        $.ajax({
+            type:"post",
+            url:"/demo/myUser/validateCode",
+            data:"codeNumber="+codeNumber,
+            success:function (msg) {
+                if(msg=="fail"){
+                    $("#codeNumber").val("");
+                    changeCode();
+                }else{
+                    $("#tr1").hide();
+                    $("#btn1").attr("disabled", false);
+                    $("#massage_number").attr("readonly",false);
+                }
+
+            }
+        })
+    })
+    function changeCode(){
+        var src= $("#_img").attr("src","/demo/myUser/getCaptchaCode?"+new Date().getTime());
+    }
+
+    $("#btn1").click(function (e) {
+        e.stopPropagation()
+        console.log(2)
+        var phone=$("#phone").val();
+        var re = /^1\d{10}$/;
+        if(!re.test(phone)){
+            alert("请输入正确的号码获取验证码！！");
+        }else{
+            $("#span2").html("");
+            $.ajax({
+                type:"post",
+                url:"/demo/myUser/validateName",
+                data:"phone="+phone,
+                success:function (msg) {
+                    if(msg=="exit"){
+                            alert("会员已经被注册过了")
+                    }else{
+                        $.ajax({
+                            type:"post",
+                            url:"/demo/myUser/sendValidateNumber",
+                            data:"phone="+phone,
+                            success:function (msg) {
+                                alert("验证码："+msg);
+                                var countdown=60;
+                                var chen=null
+                                function settime() {
+                                    if(countdown==0){
+                                        $("#btn1").attr("disabled",false);
+                                        $("#btn1").val("获取验证码");
+                                        countdown=60;
+                                        clearInterval(chen);
+                                        return false;
+                                    }else{
+                                        $("#btn1").attr("disabled", true);
+                                        $("#btn1").val("重新发送(" + countdown + ")");
+                                        countdown--;
+                                        }
+                                    }
+                                    chen=setInterval(function () {
+                                        settime();
+                                    },1000);
+                                }
+                            })
+                        }
+                    }
+                })
+            }
+
+    })
+    $("#phone").on('change',function () {
+        console.log(1)
+        var phone=$(this).val();
+        var re = /^1\d{10}$/;
+        if(!re.test(phone)){
+            $("#span2").html("*注意手机号码格式哦");
+        }else{
+            $("#span2").html("");
+            $.ajax({
+                type:"post",
+                url:"/demo/myUser/validatePhone",
+                data:"phone="+phone,
+                success:function (msg) {
+                    if(msg=="exit"){
+                        $("#span2").html("*会员已经注册");
+                    }
+                }
+            })
+        }
+    })
+    //提交
+    $("#btn2").click(function () {
+        $("#codeNumber").val("")
+        var massageNumber=$("#massageNumber").val();
+        var password=$("#password").val();
+        var phone=$("#phone").val();
+        var name=$("#name").val();
+        var re = /^1\d{10}$/;
+        if(name==""||name==null){
+            alert("用户名不可为空");
+        }else {
+            $.ajax({
+                type: "post",
+                url: "/demo/myUser/validateName",
+                data: "name=" + name,
+                success: function (msg) {
+                    if (msg == "exit") {
+                        alert("该用户名已经存在");
+                    } else {
+                        if(!re.test(phone)){
+                            alert("*手机号码格式错误");
+                        }else if(password==null||password==""){
+                            alert("*密码不可为空");
+                        }else if(password.length<4){
+                            alert("密码不可以小于4位");
+                        }else if(massageNumber==""||massageNumber==null){
+                            alert("*手机验证码不可为空");
+                            /*$("#span4").html("*手机验证码不可为空");*/
+                        }else if(!$("#agreement").is(':checked')){
+                            alert("请同意相关协议才可注册");
+                        }else{
+                            $("#span2").html("");
+                            $("#span3").html("");
+                            $("#span4").html("");
+                            $.ajax({
+                                type:"post",
+                                url:"/demo/myUser/validateNumber",
+                                data:"massageNumber="+massageNumber,
+                                success:function (msg) {
+                                    alert(msg);
+                                    if (msg == "success") {
+                                        alert("输入手机验证码正确");
+                                        $.ajax({
+                                            type:"post",
+                                            url:"/demo/myUser/validatePhone",
+                                            data:"phone="+phone,
+                                            success:function (msg) {
+                                                if(msg=="exit"){
+                                                    alert("*该会员已经注册过,快去登录吧")
+                                                }else{
+                                                    $.ajax({
+                                                        type:"post",
+                                                        url:"/demo/myUser/register",
+                                                        data: $("#frm").serialize(),
+                                                        success:function (msg) {
+                                                            if(msg=="success"){
+                                                                alert("注册成功,恭喜你成为会员");
+                                                                window.location.href="/demo/myUser/getLogin";
+                                                            }else {
+                                                                alert("注册失败");
+                                                            }
+                                                        }
+                                                    })
+                                                }
+                                            }
+                                        })
+                                    } else if (msg == "fail") {
+                                        alert("输入验证码失败");
+                                        $("#btn1").attr("disabled", true);
+                                        $("#massage_number").attr("readonly",true);
+                                        change_code();
+                                        $("#tr1").show();
+                                    }
+                                }
+                            })
+                        }
+
+                    }
+                }
+            })
+        }
+
+    })
+</script>
+</html>

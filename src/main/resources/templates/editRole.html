@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+    <style>
+     #div1{
+         width: 100%;
+         height: 600px;
+         float: left;
+         text-align: center;
+        background: url("../images/8.jpg") center no-repeat;
+         background-size: auto;
+     }
+
+    </style>
+
+</head>
+<body>
+<a th:href="@{/myUser/getFirstPage(uId=${uId})}">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myPower/powerManager(uId=${uId})}">权限管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a th:href="@{/myUser/getFirstPage(uId=${uId})}">角色管理</a>
+<br/>
+<hr/>
+<div id="div1">
+<input hidden th:value="${uId}" id="uId" name="uId">
+<input hidden th:value="${role.roleId}" id="roleId" name="roleId">
+<br/><br/><br/><br/><br/>
+<center>
+<table>
+    <tr>
+        <td>角色名:</td><td><input type="text" name="roleName" id="roleName" th:value="${role.roleName}"></td>
+    </tr>
+    <tr>
+        <td>赋予角色权限:</td>
+        <td><select class="demo" multiple="multiple" >
+        <optgroup label="请选择权限">
+            <option></option>
+            <option th:id="'a_'+${power.getPowerName()}" th:each="power,iterStat : ${powerList}" th:value="${power.getPowerName()}" th:text="${power.getPowerName()}"/>
+        </optgroup>
+    </select></td>
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" id="btn" onclick="editRole()" value="确定"></td>
+    </tr>
+
+</table>
+</center>
+</div>
+<script th:inline="javascript">
+    $(function () {
+        var list=[[${powerNameList}]]
+       for(var i=0;i<list.length;i++){
+           $("#a_"+list[i]+"").attr("selected",true);
+       }
+
+    })
+
+    function editRole() {
+        var uId=$("#uId").val();
+        var roleName=$("#roleName").val();
+        var roleId=$("#roleId").val();
+        var arr=[];//定义一个数组
+        var arr2=$(":checked");//获取多选框的数组
+        $.each(arr2,function () {
+            arr.push($(this).val());//把多选框数组的value放入自己定义的里面
+        })
+
+       if(roleName==""){
+            alert("角色名不能为空");
+        }else if(roleName!=null){
+            var confirm_ = confirm('确认修改？');
+            if(confirm_){
+                $.ajax({
+                    ContentType:"application/json;charset=UTF-8",
+                    type:"post",
+                    url:"/demo/myRole/updateRole",
+                    data: {"powerList" : arr.join(","),"roleName":roleName,"roleId":roleId},
+                    success:function (msg) {
+                        if(msg=="success"){
+                            window.location.href="/demo/myRole/roleManager?uId="+uId;
+                        }else {
+                            alert("修改失败");
+                        }
+                    }
+                })
+            }
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

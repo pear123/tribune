@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PowerDao">
+
+
+    <resultMap id="powerMap" type="power">
+        <id property="powerId" column="power_id"/>
+        <result property="powerName" column="power_name"></result>
+    </resultMap>
+
+    <insert id="addPower" parameterType="power">
+        insert into power(power_name)values (#{powerName})
+    </insert>
+    <delete id="deletePower" parameterType="Integer">
+        delete from power where power_id=#{powerId}
+    </delete>
+
+    <select id="queryPowerById" parameterType="Integer" resultMap="powerMap">
+        select power.* from power where power_id=#{powerId}
+    </select>
+    <select id="queryPowerByName" parameterType="String" resultMap="powerMap">
+        select power.* from power where power_name=#{powerName}
+    </select>
+
+    <select id="queryPowerList"  resultMap="powerMap">
+        select power.* from power
+    </select>
+</mapper>
