@@ -80,7 +80,10 @@
         <center>
         <div id="commentDiv">
             <div id="divHeader">
-            <span style="float: left" th:text="${commentCustom.user.name}+'回复：'"/>
+            <span style="float: left" th:text="${commentCustom.user.name}+'&nbsp;回复：'"/>
+                <span th:if="${commentCustom.user2!=null}">
+                     <span style="float: left" th:text="'@'+${commentCustom.user2.name}"/>
+                </span>
             </div>
             <div id="divContent">
                 <textarea readonly type="text" id="commentContent" name="commentContent" th:text="${commentCustom.content}"></textarea>
@@ -89,13 +92,45 @@
                 <a th:if="${commentCustom.uId==uId} or ${uId==1}">
                 <a style="float: left;text-decoration: none" href="#" th:onclick="'javascript:deleteComment('+${commentCustom.commentId}+')'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除评论</a>
                 </a>
-                <span style="float: right" th:text="${#dates.format(commentCustom.commentCreatetime, 'yyyy-MM-dd')}"/><br/>
+                <a th:if="${commentCustom.uId!=uId}">
+                <a style="float: left;text-decoration: none" href="#" th:onclick="'javascript:replyComment('+${commentCustom.uId}+')'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回复</a>
+                </a>
+                <span style="float: right" th:text="${#dates.format(commentCustom.commentCreatetime, 'yyyy-MM-dd HH:mm:ss')}"/><br/>
             </div>
         </div>
         </center>
     </div>
 </center>
 <script type="text/javascript">
+    //回复评论
+    function replyComment(commentUid) {
+        var articleId=$("#articleId").val();
+        var uId=$("#uId").val();
+        var content=window.prompt("请输入你的回复","");
+        if(content==""||content==""){
+            alert("内容不能为空");
+        }else if(content!=null){
+            var confirm_ = confirm('确认进行回复？');
+            if(confirm_){
+                $.ajax({
+                    ContentType:"application/json;charset=UTF-8",
+                    type:"post",
+                    url:"/demo/myComment/replyComment",
+                    data:{"content":content,"uId":uId,"articleId":articleId,"commentUid":commentUid},
+                    success:function (msg) {
+                        if(msg=="success"){
+                            alert("回复成功")
+                            window.location.href="/demo/myArticle/articleDetails?uId="+uId+"&articleId="+articleId;
+                        }else {
+                            alert("回复失败");
+                        }
+                    }
+                })
+            }
+
+        }
+
+    }
     //删除评论
     function deleteComment(commentId) {
         var confirm_=confirm('确认删除评论？');

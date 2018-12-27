@@ -10,7 +10,21 @@
         <result property="uId" column="u_id"></result>
         <result property="content" column="content"></result>
         <result property="commentCreatetime" column="comment_createtime"></result>
+        <result property="toUid" column="to_u_id"></result>
     </resultMap>
+
+  <!--  <resultMap id="commentCustomMap" type="commentCustom">
+        <id property="commentId" column="comment_id"/>
+        <result property="articleId" column="article_id"></result>
+        <result property="uId" column="u_id"></result>
+        <result property="content" column="content"></result>
+        <result property="commentCreatetime" column="comment_createtime"></result>
+        <result property="toUid" column="to_u_id"></result>
+        <association property="user" javaType="User">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>-->
 
     <resultMap id="commentCustomMap" type="commentCustom">
         <id property="commentId" column="comment_id"/>
@@ -18,14 +32,20 @@
         <result property="uId" column="u_id"></result>
         <result property="content" column="content"></result>
         <result property="commentCreatetime" column="comment_createtime"></result>
+        <result property="toUid" column="to_u_id"></result>
         <association property="user" javaType="User">
             <id column="id" property="id"/>
             <result column="name" property="name"/>
         </association>
+        <association property="user2" javaType="User">
+            <result column="to_name" property="name"/>
+        </association>
+
     </resultMap>
 
+
     <insert id="addComment" parameterType="comment">
-        insert into comment(article_id,u_id,content,comment_createtime)values (#{articleId},#{uId},#{content},#{commentCreatetime})
+        insert into comment(article_id,u_id,content,comment_createtime,to_u_id)values (#{articleId},#{uId},#{content},#{commentCreatetime},#{toUid})
     </insert>
     <update id="updateComment" parameterType="comment">
          update comment set content=#{content} where comment_id=#{commentId}
@@ -36,7 +56,15 @@
     <delete id="deleteComment" parameterType="Integer">
         delete from comment where comment_id=#{commentId}
     </delete>
-    <select id="queryCommentListByArticleId" parameterType="Integer" resultMap="commentCustomMap">
+ <!--   <select id="queryCommentListByArticleId" parameterType="Integer" resultMap="commentCustomMap">
         select comment.*,user.name from comment,user where article_id=#{articleId} and comment.u_id=user.id
+    </select>-->
+
+    <select id="queryCommentListByArticleId" parameterType="Integer" resultMap="commentCustomMap">
+       select * from(SELECT comment.*,user.name FROM comment,user
+    WHERE article_id=#{articleId} and user.id=comment.u_id )a
+    left outer join
+    (SELECT user.`name` as to_name,c.to_u_id as x FROM comment AS c,user
+   where c.to_u_id=user.id)b on b.x=a.to_u_id
     </select>
 </mapper>

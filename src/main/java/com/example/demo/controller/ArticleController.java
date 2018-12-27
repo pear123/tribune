@@ -179,8 +179,8 @@ public class ArticleController {
     @RequestMapping("articleDetails")
     public String articleDetails(Model model, Integer articleId,Integer uId) throws Exception {
         Article article=articleService.queryArticleById(articleId);
-        List<CommentCustom> commentList=commentService.commentListByArticleId(articleId);
         Score score=scoreService.queryScore(uId);
+        List<CommentCustom> commentList=commentService.commentListByArticleId(articleId);
         model.addAttribute("commentList",commentList);
         model.addAttribute("article",article);
         model.addAttribute("uId",uId);

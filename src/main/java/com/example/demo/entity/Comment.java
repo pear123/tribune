@@ -8,6 +8,16 @@ public class Comment {
     private Integer uId;
     private Date commentCreatetime;
     private String content;
+    private Integer toUid;
+
+
+    public Integer getToUid() {
+        return toUid;
+    }
+
+    public void setToUid(Integer toUid) {
+        this.toUid = toUid;
+    }
 
     public Integer getCommentId() {
         return commentId;

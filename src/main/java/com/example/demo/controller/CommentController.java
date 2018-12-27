@@ -27,6 +27,7 @@ public class CommentController {
         comment.setCommentCreatetime(date);
         comment.setContent(content);
         comment.setuId(uId);
+        comment.setToUid(null);
         boolean b=commentService.addComment(comment);
         if (b) {
             return "success";
@@ -45,4 +46,22 @@ public class CommentController {
         }
         return "fail";
     }
+
+    @RequestMapping("replyComment")
+    public @ResponseBody
+    String replyComment(Model model,Integer articleId,Integer uId,String content,Integer commentUid){
+        Date date=new Date();
+        Comment comment=new Comment();
+        comment.setArticleId(articleId);
+        comment.setCommentCreatetime(date);
+        comment.setContent(content);
+        comment.setuId(uId);
+        comment.setToUid(commentUid);
+        boolean b=commentService.addComment(comment);
+        if (b) {
+            return "success";
+        }
+        return "fail";
+    }
+
 }
