@@ -1344,3 +1344,106 @@
 2018-12-27 11:25:02.975 DEBUG 6516 --- [http-nio-9090-exec-1] c.e.d.d.R.queryRolePowerByRoleId         : ==>  Preparing: select role_power.*,role.role_name,power.power_name from role_power,role,power where roles_id=? and role_power.powers_id=power.power_id and role_power.roles_id=role.role_id 
 2018-12-27 11:25:02.976 DEBUG 6516 --- [http-nio-9090-exec-1] c.e.d.d.R.queryRolePowerByRoleId         : ==> Parameters: 4(Integer)
 2018-12-27 11:25:02.978 DEBUG 6516 --- [http-nio-9090-exec-1] c.e.d.d.R.queryRolePowerByRoleId         : <==      Total: 1
+2018-12-27 11:25:44.291  INFO 1696 --- [restartedMain] com.example.demo.DemoApplication         : Starting DemoApplication on nkgw10nh2005 with PID 1696 (E:\IdeaProjects\tribune\target\classes started by Lili.Chen in E:\IdeaProjects\tribune)
+2018-12-27 11:25:44.295  INFO 1696 --- [restartedMain] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2018-12-27 11:25:44.454  INFO 1696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018-12-27 11:25:44.454  INFO 1696 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018-12-27 11:25:46.580  INFO 1696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2018-12-27 11:25:46.598  INFO 1696 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-27 11:25:46.599  INFO 1696 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-27 11:25:46.605  INFO 1696 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_162\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\maven\apache-maven-3.1.0\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_162\bin;D:\mysql-5.7.21-winx64\bin;D:\apache-tomcat-7.0.70\bin;D:\Git\cmd;C:\Users\lili.chen\AppData\Local\Microsoft\WindowsApps;;.]
+2018-12-27 11:25:46.683  INFO 1696 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring embedded WebApplicationContext
+2018-12-27 11:25:46.683  INFO 1696 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2229 ms
+2018-12-27 11:25:46.772  INFO 1696 --- [MLog-Init-Reporter] com.mchange.v2.log.MLog                  : MLog clients using slf4j logging.
+2018-12-27 11:25:46.802  INFO 1696 --- [restartedMain] com.mchange.v2.c3p0.C3P0Registry         : Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-12-27 11:25:47.788  INFO 1696 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-27 11:25:47.846  INFO 1696 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path '/demo'
+2018-12-27 11:25:47.851  INFO 1696 --- [restartedMain] com.example.demo.DemoApplication         : Started DemoApplication in 4.161 seconds (JVM running for 5.294)
+2018-12-27 11:25:57.532  INFO 1696 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/demo]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-27 11:25:57.533  INFO 1696 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-27 11:25:57.546  INFO 1696 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2018-12-27 11:25:57.623  INFO 1696 --- [http-nio-9090-exec-1] c.m.v.c.i.AbstractPoolBackedDataSource   : Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2wxpo89z1tya9pkw69tru|45a1d258, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 2wxpo89z1tya9pkw69tru|45a1d258, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/homework2?useUnicode=true&characterEncoding=utf8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Hongkong, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-12-27 11:25:57.749 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.PowerDao.queryPowerList     : ==>  Preparing: select power.* from power 
+2018-12-27 11:25:57.772 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.PowerDao.queryPowerList     : ==> Parameters: 
+2018-12-27 11:25:57.792 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.PowerDao.queryPowerList     : <==      Total: 2
+2018-12-27 11:25:57.796 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 11:25:57.797 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 4(Integer)
+2018-12-27 11:25:57.798 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 11:25:57.799 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 11:25:57.799 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 4(Integer)
+2018-12-27 11:25:57.800 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 11:25:57.801 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.d.d.R.queryRolePowerByRoleId         : ==>  Preparing: select role_power.*,role.role_name,power.power_name from role_power,role,power where roles_id=? and role_power.powers_id=power.power_id and role_power.roles_id=role.role_id 
+2018-12-27 11:25:57.802 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.d.d.R.queryRolePowerByRoleId         : ==> Parameters: 4(Integer)
+2018-12-27 11:25:57.805 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.d.d.R.queryRolePowerByRoleId         : <==      Total: 1
+2018-12-27 11:34:44.776 DEBUG 1696 --- [http-nio-9090-exec-5] c.e.demo.dao.PowerDao.queryPowerList     : ==>  Preparing: select power.* from power 
+2018-12-27 11:34:44.776 DEBUG 1696 --- [http-nio-9090-exec-5] c.e.demo.dao.PowerDao.queryPowerList     : ==> Parameters: 
+2018-12-27 11:34:44.779 DEBUG 1696 --- [http-nio-9090-exec-5] c.e.demo.dao.PowerDao.queryPowerList     : <==      Total: 2
+2018-12-27 11:34:47.916 DEBUG 1696 --- [http-nio-9090-exec-6] c.e.demo.dao.PowerDao.queryPowerList     : ==>  Preparing: select power.* from power 
+2018-12-27 11:34:47.916 DEBUG 1696 --- [http-nio-9090-exec-6] c.e.demo.dao.PowerDao.queryPowerList     : ==> Parameters: 
+2018-12-27 11:34:47.917 DEBUG 1696 --- [http-nio-9090-exec-6] c.e.demo.dao.PowerDao.queryPowerList     : <==      Total: 2
+2018-12-27 11:34:48.667 DEBUG 1696 --- [http-nio-9090-exec-7] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.0
+2018-12-27 11:34:48.668 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserById       : ==>  Preparing: select user.* from user where id=? 
+2018-12-27 11:34:48.668 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserById       : ==> Parameters: 1(Integer)
+2018-12-27 11:34:48.670 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.UserDao.queryUserById       : <==      Total: 1
+2018-12-27 11:34:48.670 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 11:34:48.671 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 1(Integer)
+2018-12-27 11:34:48.671 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 11:34:48.672 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.d.ArticleDao.findArticleListIndex  : ==>  Preparing: select article.* ,user.name from article,user where user.id=article.u_id 
+2018-12-27 11:34:48.672 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.d.ArticleDao.findArticleListIndex  : ==> Parameters: 
+2018-12-27 11:34:48.679 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.d.ArticleDao.findArticleListIndex  : <==      Total: 11
+2018-12-27 11:34:48.680 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.dao.ArticleDao.queryArticleList    : ==>  Preparing: select * from article 
+2018-12-27 11:34:48.680 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.dao.ArticleDao.queryArticleList    : ==> Parameters: 
+2018-12-27 11:34:48.683 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.dao.ArticleDao.queryArticleList    : <==      Total: 11
+2018-12-27 11:34:48.684 DEBUG 1696 --- [http-nio-9090-exec-7] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.5
+2018-12-27 11:34:48.684 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==>  Preparing: select score.* from score where u_id=? 
+2018-12-27 11:34:48.685 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==> Parameters: 1(Integer)
+2018-12-27 11:34:48.686 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.ScoreDao.querryScoreByUid   : <==      Total: 1
+2018-12-27 11:34:48.686 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 11:34:48.686 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 1(Integer)
+2018-12-27 11:34:48.687 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 11:34:48.688 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.d.R.queryRolePowerByRoleId         : ==>  Preparing: select role_power.*,role.role_name,power.power_name from role_power,role,power where roles_id=? and role_power.powers_id=power.power_id and role_power.roles_id=role.role_id 
+2018-12-27 11:34:48.688 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.d.R.queryRolePowerByRoleId         : ==> Parameters: 1(Integer)
+2018-12-27 11:34:48.689 DEBUG 1696 --- [http-nio-9090-exec-7] c.e.d.d.R.queryRolePowerByRoleId         : <==      Total: 0
+2018-12-27 11:34:49.686 DEBUG 1696 --- [http-nio-9090-exec-8] c.e.d.d.A.findArticleListIndexByUid      : ==>  Preparing: select article.*,user.name from article,user where u_id=? and user.id=article.u_id 
+2018-12-27 11:34:49.686 DEBUG 1696 --- [http-nio-9090-exec-8] c.e.d.d.A.findArticleListIndexByUid      : ==> Parameters: 1(Integer)
+2018-12-27 11:34:49.688 DEBUG 1696 --- [http-nio-9090-exec-8] c.e.d.d.A.findArticleListIndexByUid      : <==      Total: 1
+2018-12-27 11:34:49.689 DEBUG 1696 --- [http-nio-9090-exec-8] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.6666666666666666
+2018-12-27 11:34:49.690 DEBUG 1696 --- [http-nio-9090-exec-8] c.e.d.dao.ArticleDao.queryArticleByUId   : ==>  Preparing: select article.* from article where u_id=? 
+2018-12-27 11:34:49.690 DEBUG 1696 --- [http-nio-9090-exec-8] c.e.d.dao.ArticleDao.queryArticleByUId   : ==> Parameters: 1(Integer)
+2018-12-27 11:34:49.692 DEBUG 1696 --- [http-nio-9090-exec-8] c.e.d.dao.ArticleDao.queryArticleByUId   : <==      Total: 1
+2018-12-27 11:34:50.431 DEBUG 1696 --- [http-nio-9090-exec-9] c.e.demo.dao.PowerDao.queryPowerList     : ==>  Preparing: select power.* from power 
+2018-12-27 11:34:50.432 DEBUG 1696 --- [http-nio-9090-exec-9] c.e.demo.dao.PowerDao.queryPowerList     : ==> Parameters: 
+2018-12-27 11:34:50.434 DEBUG 1696 --- [http-nio-9090-exec-9] c.e.demo.dao.PowerDao.queryPowerList     : <==      Total: 2
+2018-12-27 11:34:51.205 DEBUG 1696 --- [http-nio-9090-exec-10] c.e.demo.dao.RoleDao.queryRoleList       : ==>  Preparing: select role.* from role 
+2018-12-27 11:34:51.206 DEBUG 1696 --- [http-nio-9090-exec-10] c.e.demo.dao.RoleDao.queryRoleList       : ==> Parameters: 
+2018-12-27 11:34:51.207 DEBUG 1696 --- [http-nio-9090-exec-10] c.e.demo.dao.RoleDao.queryRoleList       : <==      Total: 4
+2018-12-27 11:34:51.208 DEBUG 1696 --- [http-nio-9090-exec-10] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.5
+2018-12-27 11:34:51.208 DEBUG 1696 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserList       : ==>  Preparing: select user.*,role.role_name from user,role where role.role_id=user.role_id 
+2018-12-27 11:34:51.208 DEBUG 1696 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserList       : ==> Parameters: 
+2018-12-27 11:34:51.215 DEBUG 1696 --- [http-nio-9090-exec-10] c.e.demo.dao.UserDao.queryUserList       : <==      Total: 11
+2018-12-27 11:34:53.671 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleList       : ==>  Preparing: select role.* from role 
+2018-12-27 11:34:53.672 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleList       : ==> Parameters: 
+2018-12-27 11:34:53.674 DEBUG 1696 --- [http-nio-9090-exec-1] c.e.demo.dao.RoleDao.queryRoleList       : <==      Total: 4
+2018-12-27 11:34:54.372 DEBUG 1696 --- [http-nio-9090-exec-2] c.e.demo.dao.PowerDao.queryPowerList     : ==>  Preparing: select power.* from power 
+2018-12-27 11:34:54.373 DEBUG 1696 --- [http-nio-9090-exec-2] c.e.demo.dao.PowerDao.queryPowerList     : ==> Parameters: 
+2018-12-27 11:34:54.374 DEBUG 1696 --- [http-nio-9090-exec-2] c.e.demo.dao.PowerDao.queryPowerList     : <==      Total: 2
+2018-12-27 11:34:55.021 DEBUG 1696 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.6
+2018-12-27 11:34:55.021 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 11:34:55.022 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 1(Integer)
+2018-12-27 11:34:55.023 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 11:34:55.023 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.d.ArticleDao.findArticleListIndex  : ==>  Preparing: select article.* ,user.name from article,user where user.id=article.u_id 
+2018-12-27 11:34:55.023 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.d.ArticleDao.findArticleListIndex  : ==> Parameters: 
+2018-12-27 11:34:55.029 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.d.ArticleDao.findArticleListIndex  : <==      Total: 11
+2018-12-27 11:34:55.030 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.dao.ArticleDao.queryArticleList    : ==>  Preparing: select * from article 
+2018-12-27 11:34:55.031 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.dao.ArticleDao.queryArticleList    : ==> Parameters: 
+2018-12-27 11:34:55.033 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.dao.ArticleDao.queryArticleList    : <==      Total: 11
+2018-12-27 11:34:55.034 DEBUG 1696 --- [http-nio-9090-exec-4] com.example.demo.dao.UserDao             : Cache Hit Ratio [com.example.demo.dao.UserDao]: 0.6666666666666666
+2018-12-27 11:34:55.034 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==>  Preparing: select score.* from score where u_id=? 
+2018-12-27 11:34:55.034 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.ScoreDao.querryScoreByUid   : ==> Parameters: 1(Integer)
+2018-12-27 11:34:55.035 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.ScoreDao.querryScoreByUid   : <==      Total: 1
+2018-12-27 11:34:55.036 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==>  Preparing: select role.* from role where role_id=? 
+2018-12-27 11:34:55.036 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : ==> Parameters: 1(Integer)
+2018-12-27 11:34:55.037 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.demo.dao.RoleDao.queryRoleById       : <==      Total: 1
+2018-12-27 11:34:55.038 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.d.R.queryRolePowerByRoleId         : ==>  Preparing: select role_power.*,role.role_name,power.power_name from role_power,role,power where roles_id=? and role_power.powers_id=power.power_id and role_power.roles_id=role.role_id 
+2018-12-27 11:34:55.038 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.d.R.queryRolePowerByRoleId         : ==> Parameters: 1(Integer)
+2018-12-27 11:34:55.039 DEBUG 1696 --- [http-nio-9090-exec-4] c.e.d.d.R.queryRolePowerByRoleId         : <==      Total: 0
