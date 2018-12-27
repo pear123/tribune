@@ -30,7 +30,15 @@ public class RoleController {
     private RolePowerService rolePowerService;
     @Resource
     private UserService userService;
-
+    
+      
+    /** 
+    * @Description: 跳转到角色管理的页面 
+    * @Param: [model, uId] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("roleManager")
     public String roleManager(Model model, Integer uId)throws Exception {
         List<Role> roleList=roleService.queryRoleList();
@@ -46,8 +54,14 @@ public class RoleController {
         return "roleManager";
     }
 
-
-
+  
+    /** 
+    * @Description: 创建角色 
+    * @Param: [model, roleName] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("createRole")
     public @ResponseBody String createRole(Model model, String roleName)throws Exception {
         Role role=new Role();
@@ -59,7 +73,13 @@ public class RoleController {
        return "fail";
     }
 
-
+    /** 
+    * @Description: 删除角色 
+    * @Param: [roleId] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("deleteRole")
     public @ResponseBody
     String  deleteRole(Integer roleId)throws Exception {
@@ -69,6 +89,14 @@ public class RoleController {
         }
         return "fail";
     }
+    
+    /** 
+    * @Description: 跳转到编辑角色的页面 
+    * @Param: [model, uId, roleId] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("editRole")
     public String editRole(Model model, Integer uId,Integer roleId)throws Exception {
         List<Power> powerList=powerService.queryPowerList();
@@ -85,7 +113,14 @@ public class RoleController {
         model.addAttribute("powerNameList",myPowerIdList);
         return "editRole";
     }
-
+    
+    /** 
+    * @Description: 更新角色 
+    * @Param: [model, roleName, powerList, roleId] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("updateRole")
     public @ResponseBody String updateRole(Model model,String roleName,String powerList,Integer roleId)throws Exception {
         String[] powers = powerList.split(",");
@@ -115,7 +150,15 @@ public class RoleController {
 
         return "fail";
     }
-
+    
+    
+    /** 
+    * @Description: 赋予用户角色 
+    * @Param: [uId, roleName, model] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping(value ="/giveRole",method= RequestMethod.POST,produces="text/html;charset=UTF-8")
     public @ResponseBody
     String  giveRole(Integer uId,String roleName,Model model){

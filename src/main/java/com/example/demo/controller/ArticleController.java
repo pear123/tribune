@@ -136,7 +136,7 @@ public class ArticleController {
     }
 
     /**
-    * @Description: 有关分页的操作分页的操作
+    * @Description: 有关分页的操作（所有文章）
     * @Param: [model, page, u_id]
     * @return: java.lang.String
     * @Author: Lili Chen
@@ -175,7 +175,13 @@ public class ArticleController {
 
     }
 
-
+   /**
+   * @Description:  查看详情
+   * @Param: [model, articleId, uId]
+   * @return: java.lang.String
+   * @Author: Lili Chen
+   * @Date: 2018/12/27
+   */
     @RequestMapping("articleDetails")
     public String articleDetails(Model model, Integer articleId,Integer uId) throws Exception {
         Article article=articleService.queryArticleById(articleId);
@@ -190,7 +196,13 @@ public class ArticleController {
 
 
 
-
+/**
+* @Description: 自己文章 页面进行分页操作
+* @Param: [model, page, uId]
+* @return: java.lang.String
+* @Author: Lili Chen
+* @Date: 2018/12/27
+*/
     @RequestMapping("queryArticleListByUid")
     public String queryArticleListByUid(Model model,Integer page,Integer uId) throws Exception {
         int beginIndex=0;
@@ -219,6 +231,13 @@ public class ArticleController {
 
     }
 
+    /**
+    * @Description:  查看自己的文章
+    * @Param: [uId, model]
+    * @return: java.lang.String
+    * @Author: Lili Chen
+    * @Date: 2018/12/27
+    */
     @RequestMapping("getMyArticle")
     public String  myArticle(Integer uId,Model model)throws Exception {
         List<ArticleCustom> articleList=articleService.findArticleListIndexByUid(0,4,uId);

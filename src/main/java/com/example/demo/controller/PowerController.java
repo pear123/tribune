@@ -17,7 +17,13 @@ public class PowerController {
     @Resource
     private PowerService powerService;
 
-
+    /** 
+    * @Description: 跳转到权限管理页面 
+    * @Param: [model, uId] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("powerManager")
     public String  powerManager(Model model,Integer uId)throws Exception {
         List<Power> powerList=powerService.queryPowerList();
@@ -26,6 +32,13 @@ public class PowerController {
         return "powerManager";
     }
 
+    /** 
+    * @Description: 创建权限 
+    * @Param: [powerName] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("createPower")
     public @ResponseBody
     String  createPower(String powerName)throws Exception {
@@ -38,6 +51,13 @@ public class PowerController {
         return "fail";
     }
 
+    /** 
+    * @Description: 删除权限 
+    * @Param: [powerId] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("deletePower")
     public @ResponseBody
     String   deletePower(Integer powerId)throws Exception {

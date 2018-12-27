@@ -388,7 +388,13 @@ public class UserController {
         return "fail";
     }
 
-
+    /**
+    * @Description: 验证用户名
+    * @Param: [name]
+    * @return: java.lang.String
+    * @Author: Lili Chen
+    * @Date: 2018/12/27
+    */
     @RequestMapping(value = "/validateName")
     private @ResponseBody String  validateName(String name) throws Exception {
         User user=userService.queryUserByName(name);
@@ -398,6 +404,14 @@ public class UserController {
         return "not_exit";
     }
 
+
+    /**
+    * @Description: 跳转到用户管理页面
+    * @Param: [uId, model]
+    * @return: java.lang.String
+    * @Author: Lili Chen
+    * @Date: 2018/12/27
+    */
     @RequestMapping(value="/userManager")
     public String  userManager(Integer uId,Model model)throws Exception {
         List<Role> roleList=roleService.queryRoleList();
@@ -414,12 +428,7 @@ public class UserController {
                 iterator.remove();
             }
         }
-        /*for(UserCustom user:userList){
-            System.out.println(user.getId()+"   "+uId);
-            if(user.getId()==uId){
-                userList.remove(user);
-            }
-        }*/
+
         model.addAttribute("userList",userList);
         model.addAttribute("uId",uId);
         model.addAttribute("roleList",roleList);

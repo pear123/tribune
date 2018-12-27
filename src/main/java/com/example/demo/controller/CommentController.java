@@ -18,6 +18,13 @@ public class CommentController {
     private CommentService commentService;
 
 
+    /** 
+    * @Description: 添加评论 
+    * @Param: [model, articleId, uId, content] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("addComment")
     public @ResponseBody
     String addComment(Model model,Integer articleId,Integer uId,String content){
@@ -36,7 +43,13 @@ public class CommentController {
     }
 
 
-
+   /** 
+   * @Description: 删除评论 
+   * @Param: [model, commentId] 
+   * @return: java.lang.String 
+   * @Author: Lili Chen 
+   * @Date: 2018/12/27 
+   */
     @RequestMapping("deleteComment")
     public @ResponseBody
     String deleteComment(Model model,Integer commentId){
@@ -47,6 +60,13 @@ public class CommentController {
         return "fail";
     }
 
+    /** 
+    * @Description: 回复评论 
+    * @Param: [model, articleId, uId, content, commentUid] 
+    * @return: java.lang.String 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/27 
+    */
     @RequestMapping("replyComment")
     public @ResponseBody
     String replyComment(Model model,Integer articleId,Integer uId,String content,Integer commentUid){
