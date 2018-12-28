@@ -111,7 +111,6 @@
                 url:"/demo/myUser/validatePhone",
                 data:"phone="+phone,
                 success:function (msg) {
-                    alert(msg);
                     if(msg=="not_exit"){
                         $("#span1").html("*不存在该会员");
                     }else{

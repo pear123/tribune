@@ -11,8 +11,8 @@ public interface RolePowerDao {
     void addRolePower(RolePower rolePower);
     void deleteRolePower(Integer rolePowerId);
     RolePowerCustom queryRolePowerById(Integer id);
-    List<RolePowerCustom>  queryRolePowerByPowerId(Integer id);
-    List<RolePowerCustom>  queryRolePowerByRoleId(Integer id);
+    List<RolePowerCustom>  queryRolePowerByPowerId(Integer powerId);
+    List<RolePowerCustom>  queryRolePowerByRoleId(Integer roleId);
     List<RolePowerCustom> queryRolePowerList();
     void batchAddRolePower (List<RolePower> rolePowerList);
 }

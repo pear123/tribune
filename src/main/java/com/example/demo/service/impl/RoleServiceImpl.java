@@ -36,13 +36,21 @@ public class RoleServiceImpl implements RoleService {
     return false;
     }
 
+    
+    /** 
+    * @Description: 删除角色 
+    * @Param: [roleId] 
+    * @return: boolean
+    * @Author: Lili Chen 
+    * @Date: 2018/12/28 
+    */
     @Override
     public boolean deleteRole(Integer roleId) {
      Role role=roleDao.queryRoleById(roleId);
         List<User> userList=userDao.queryUserListByRoleId(roleId);
      if(role!=null && userList.isEmpty()){//角色是否为空，且用户是否被赋予这个角色
-         roleDao.deleteRole(roleId);
          List<RolePowerCustom> rolePowerList=rolePowerDao.queryRolePowerByRoleId(roleId);
+         roleDao.deleteRole(roleId);
          if(!rolePowerList.isEmpty()){
              for(RolePowerCustom rolePowerCustom:rolePowerList){
                  rolePowerDao.deleteRolePower(rolePowerCustom.getRolePowerId());//删除关系表中的角色

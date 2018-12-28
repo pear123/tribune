@@ -175,6 +175,13 @@ public class UserServiceImpl implements UserService {
         return userDao.queryUserList();
     }
 
+    /** 
+    * @Description: 更改角色名 
+    * @Param: [uId, roleId] 
+    * @return: boolean 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/28 
+    */
     @Override
     public boolean updateRole(Integer uId, Integer roleId) throws Exception {
         User user1=userDao.queryUserById(uId);

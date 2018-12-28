@@ -9,11 +9,9 @@
         <result property="rolesId" column="roles_id"/>
         <result property="powersId" column="powers_id"/>
         <association property="role" javaType="Role">
-            <id property="roleId" column="role_id"/>
             <result property="roleName" column="role_name"/>
         </association>
         <association property="power" javaType="Power">
-            <id property="powerId" column="power_id"/>
             <result property="powerName" column="power_name"/>
         </association>
     </resultMap>
@@ -29,13 +27,17 @@
         select role_power.* from role_power where role_power_id=#{rolePowerId}
     </select>
     <select id="queryRolePowerByPowerId" parameterType="Integer" resultMap="rolePowerCustomMap">
-        select role_power.*,role.role_name,power.power_name from role_power,role,power where powers_id=#{powersId} and
-        role_power.powers_id=power.power_id and role_power.roles_id=role.role_id
+        select role_power.*,role.role_name,power.power_name from role_power,role,power
+       where role.role_id=role_power.roles_id
+       and power.power_id=role_power.powers_id
+       and role_power.powers_id=#{powerId}
     </select>
 
     <select id="queryRolePowerByRoleId" parameterType="Integer" resultMap="rolePowerCustomMap">
-        select role_power.*,role.role_name,power.power_name from role_power,role,power where roles_id=#{rolesId} and
-        role_power.powers_id=power.power_id and role_power.roles_id=role.role_id
+       select role_power.*,role.role_name,power.power_name from role_power,role,power
+       where role.role_id=role_power.roles_id
+       and power.power_id=role_power.powers_id
+       and role_power.roles_id=#{roleId}
     </select>
 
     <select id="queryRolePowerList"  resultMap="rolePowerCustomMap">

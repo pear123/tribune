@@ -18,6 +18,14 @@ public class RolePowerServiceImpl implements RolePowerService {
      private RolePowerDao rolePowerDao;
     @Autowired
     private RoleDao roleDao;
+    
+    /** 
+    * @Description: 添加权限关系 
+    * @Param: [rolePower] 
+    * @return: boolean 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/28 
+    */
     @Override
     public boolean addRolePower(RolePower rolePower) {
         List<RolePowerCustom> rolePowerList=rolePowerDao.queryRolePowerList();
@@ -58,6 +66,14 @@ public class RolePowerServiceImpl implements RolePowerService {
        return false;
     }
 
+    
+    /** 
+    * @Description: 通过角色id查看权限角色关系表 
+    * @Param: [id] 
+    * @return: java.util.List<com.example.demo.entity.RolePowerCustom> 
+    * @Author: Lili Chen 
+    * @Date: 2018/12/28 
+    */
     @Override
     public List<RolePowerCustom> queryRolePowerByRoleId(Integer id) {
         Role role=roleDao.queryRoleById(id);

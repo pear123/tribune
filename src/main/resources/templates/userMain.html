@@ -43,7 +43,7 @@
 
     //修改密码
     function updatePassword() {
-        var uId=$("#uId").val();
+        var uId=[[${uId}]];
         var password=window.prompt("请输入新的密码","");
         var rePassword=window.prompt("请再次输入你的密码","");
         if(password==""||rePassword==""){
