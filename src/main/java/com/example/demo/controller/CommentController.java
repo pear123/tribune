@@ -19,7 +19,7 @@ public class CommentController {
 
 
     /** 
-    * @Description: 添加评论 
+    * @Description: 评论文章
     * @Param: [model, articleId, uId, content] 
     * @return: java.lang.String 
     * @Author: Lili Chen 

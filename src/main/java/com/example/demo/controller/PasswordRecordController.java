@@ -34,13 +34,13 @@ public class PasswordRecordController {
     }
 
     /**
-    * @Description: 返回验证码
+    * @Description: 生成并返回验证码（找回密码时）
     * @Param: [model, phone]
     * @return: java.lang.String
     * @Author: Lili Chen
     * @Date: 2018/12/17
     */
-    @RequestMapping(value="/validateNumber_",method= RequestMethod.POST,produces="text/html;charset=UTF-8")
+    @RequestMapping(value="/findPasswordValidateNumber",method= RequestMethod.POST,produces="text/html;charset=UTF-8")
     public @ResponseBody
     String validate_number(Model model, String phone) throws Exception {
         User user=userService.queryUserByPhone(phone);

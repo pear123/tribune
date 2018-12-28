@@ -185,14 +185,10 @@ public class UserController {
                         cookie.setMaxAge(-1);//设置时限
                         cookie.setPath("/"); // 设置路径（默认）
                         response.addCookie(cookie);
-                    /*    List<ArticleCustom> articleList=articleService.findArticleListIndex(0,4);*/
                         Score score=scoreService.queryScore(user1.getId());
                         model.addAttribute("name",user1.getName());
                         model.addAttribute("message"," ");
-                    /*    model.addAttribute("articleList",articleList);*/
                         model.addAttribute("uId",user1.getId());
-
-                  /*      model.addAttribute("page",1);*/
                         Role role=roleService.queryRoleById(user1.getRoleId());
                         if(role.getRoleName().equals("管理员")){
                             return "managerMain";
@@ -371,13 +367,11 @@ public class UserController {
     public @ResponseBody String find_update_Password(String phone,String password,String rePassword)throws Exception{
         User user2=userService.queryUserByPhone(phone);
         if(user2!=null){
-            String password2= MD5Utils.md5(password);
-            String rePassword2= MD5Utils.md5(rePassword);
             UserVo userVo=new UserVo();
             User user=new User();
             user.setPhone(user2.getPhone());
-            user.setPassword(password2);
-            userVo.setRePassword(rePassword2);
+            user.setPassword(password);
+            userVo.setRePassword(rePassword);
             userVo.setUser(user);
             boolean b=userService.updatePassword(userVo);
             if(b){

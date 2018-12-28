@@ -119,7 +119,7 @@
                 }else{
                     $("#tr1").hide();
                     $("#btn1").attr("disabled", false);
-                    $("#massage_number").attr("readonly",false);
+                    $("#massageNumber").attr("readonly",false);
                 }
 
             }
@@ -237,7 +237,6 @@
                                 url:"/demo/myUser/validateNumber",
                                 data:"massageNumber="+massageNumber,
                                 success:function (msg) {
-                                    alert(msg);
                                     if (msg == "success") {
                                         alert("输入手机验证码正确");
                                         $.ajax({
